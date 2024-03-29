@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HackathonDGTU.Services\HackathonDGTU.Services.csproj" />
     <ProjectReference Include="..\HackathonDGTU.Shared\HackathonDGTU.Shared.csproj" />
+    <ProjectReference Include="..\HackathonDGTU.ServicesBuilder\HackathonDGTU.ServicesBuilder.csproj" />
   </ItemGroup>
 
 </Project>
