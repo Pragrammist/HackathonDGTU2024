@@ -8,7 +8,7 @@ namespace HackathonDGTU.Data.ModelBuilders
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasMany(u => u.ActionsWithEntites).WithMany();
+            builder.HasMany(u => u.ActionsWithEntity).WithMany();
             builder.HasMany(u => u.UserActions).WithOne(a => a.User);
         }
     }

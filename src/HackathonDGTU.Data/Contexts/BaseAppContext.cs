@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HackathonDGTU.Data.Contexts;
 
-public class BaseAppContext<IDerivedClass> : IdentityDbContext<User, IdentityRole<int>, int> 
+public class BaseAppContext<IDerivedClass> : IdentityDbContext<User, Role, int> 
     where IDerivedClass : BaseAppContext<IDerivedClass>
 {
     protected BaseAppContext(DbContextOptions<IDerivedClass> optionsBuilder) : base(optionsBuilder)
@@ -14,6 +14,7 @@ public class BaseAppContext<IDerivedClass> : IdentityDbContext<User, IdentityRol
         
     }
 
+    public override DbSet<User> Users { get => (DbSet<User>)base.Users.Where(u => !u.IsDeleted); set => base.Users = value; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

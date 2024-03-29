@@ -7,13 +7,13 @@ public  static class HistoryActionExtensions
 {
     public static ModelBuilder AddHistoryForThisEntity<TEntity> (this ModelBuilder modelBuilder) where TEntity : IEntity
     {
-        modelBuilder.Entity<IEntity>().HasMany(c => c.ActionsWithEntites).WithMany();
+        modelBuilder.Entity<IEntity>().HasMany(c => c.ActionsWithEntity).WithMany();
         return modelBuilder;
     }
 
     public static EntityTypeBuilder<TEntity> AddHistoryForThisEntity<TEntity> (this EntityTypeBuilder<TEntity> modelBuilder) where TEntity : Entity
     {
-        modelBuilder.HasMany(c => c.ActionsWithEntites).WithMany();
+        modelBuilder.HasMany(c => c.ActionsWithEntity).WithMany();
         return modelBuilder;
     }
 }
