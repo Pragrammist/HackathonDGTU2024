@@ -1,6 +1,8 @@
 using HackathonDHTU.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
+namespace HackathonDGTU.Data.Contexts;
+
 public class HistoryActionsContext : BaseAppContext<HistoryActionsContext>
 {
 

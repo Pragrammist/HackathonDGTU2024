@@ -1,7 +1,7 @@
-
-
-using HackathonDHTU.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace HackathonDGTU.Data.Contexts;
 
 public  static class HistoryActionExtensions
 {
@@ -11,10 +11,9 @@ public  static class HistoryActionExtensions
         return modelBuilder;
     }
 
-    public static TEntity AppendAddAction<TEntity>(this TEntity entity) where TEntity: IEntity
+    public static EntityTypeBuilder<TEntity> AddHistoryForThisEntity<TEntity> (this EntityTypeBuilder<TEntity> modelBuilder) where TEntity : Entity
     {
-        entity.ActionsWithEntites.Add(new HistoryAddAction());
-        return entity;
+        modelBuilder.HasMany(c => c.ActionsWithEntites).WithMany();
+        return modelBuilder;
     }
-
 }

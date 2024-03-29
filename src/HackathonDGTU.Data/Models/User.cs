@@ -23,5 +23,7 @@ public class User : IdentityUser<int>, IEntity
     public DateTime CreationDate { get => DateTimeRegistration; set => DateTimeRegistration = value; }
 
     public List<HistoryAction> UserActions { get; set; } = new List<HistoryAction>();
+    
+    public List<HistoryAction> ActionsWithEntites { get; set; } = new List<HistoryAction>();
 }
 

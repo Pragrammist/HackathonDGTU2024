@@ -8,6 +8,8 @@ builder.Services.AddControllers();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+
+
 builder.Services.AddAppServices();
 
 var app = builder.Build();
