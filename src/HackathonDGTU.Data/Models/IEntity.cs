@@ -1,5 +1,7 @@
 
 
+using HackathonDHTU.Data.Models;
+
 public interface IEntity
 {
     public bool IsDeleted { get; set; }
@@ -9,6 +11,8 @@ public interface IEntity
     public DateTime? DeleteDateTime { get; set; }
 
     public DateTime? UpdateDateTime { get; set; }
+
+    public List<HistoryAction> ActionsWithEntites { get; set; }
 }
 
 
@@ -21,4 +25,6 @@ public abstract class Entity : IEntity
     public virtual DateTime? UpdateDateTime { get; set; }
 
     public virtual DateTime CreationDate { get; set; } = DateTime.UtcNow;
+
+    public virtual List<HistoryAction> ActionsWithEntites { get; set; } = new List<HistoryAction>();
 }

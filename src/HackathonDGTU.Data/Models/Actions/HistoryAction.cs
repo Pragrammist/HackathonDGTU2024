@@ -19,7 +19,5 @@ public class HistoryAction : Entity
     public virtual bool HasOldValue => OldValue is not null;
 
     public override DateTime CreationDate { get => Date; set => Date = value; }
-
-    public string WithEntityAction { get; set; } = nameof(Entity);
 }
 
