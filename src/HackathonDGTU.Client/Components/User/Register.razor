@@ -1,0 +1,43 @@
+@rendermode InteractiveAuto
+@using Models.User
+@page "/register"
+
+<EditForm Model="Model" OnSubmit="@Submit" FormName="RegisterForm">
+    <p>
+        @Message
+    </p>
+    <p>
+        <label>Логин</label>    
+        <InputText @bind-Value="Model.Login"></InputText>
+    </p>
+    <p>
+        <label>Почта</label>    
+        <InputText @bind-Value="Model.Email"></InputText>
+    </p>
+    <p>
+        <label>Пароль</label>    
+        <InputText @bind-Value="Model.Password"></InputText>
+    </p>
+    <p>
+        <label>Повтор пароля</label>    
+        <InputText @bind-Value="Model.RepeatPassword"></InputText>
+    </p>
+    <p>
+        <button type="submit">Зарегестрироваться</button>
+    </p>
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+</EditForm>
+
+@code{
+    
+    string Message = "Зарегестрируйтесь пожалуйста";
+    
+    [SupplyParameterFromForm]
+    UserRegister Model {get; set; } = new ();
+
+    void Submit()
+    {
+        Message = "Регестрация прошла успешно";
+    }
+}
