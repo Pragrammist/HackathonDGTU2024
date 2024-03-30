@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MudBlazor" Version="6.19.1" />
+    <PackageReference Include="Radzen.Blazor" Version="4.29.1" />
     <ProjectReference Include="..\HackathonDGTU.Client\HackathonDGTU.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.3" />
   </ItemGroup>
